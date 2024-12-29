@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .device-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .device-item {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dispositivos Online</h1>
+    <ul class="device-list" id="deviceList">
+        <!-- Dispositivos online serão listados aqui -->
+    </ul>
+
+    <script>
+        // Simulação de dispositivos online
+        const devices = [
+            { id: 1, name: 'Dispositivo 1' },
+            { id: 2, name: 'Dispositivo 2' },
+            { id: 3, name: 'Dispositivo 3' }
+        ];
+
+        const deviceList = document.getElementById('deviceList');
+
+        devices.forEach(device => {
+            const listItem = document.createElement('li');
+            listItem.className = 'device-item';
+            listItem.textContent = device.name;
+            listItem.onclick = () => {
+                alert(`Enviar ficheiro para ${device.name}`);
+                // Aqui você pode adicionar a lógica para selecionar e enviar o ficheiro
+            };
+            deviceList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
